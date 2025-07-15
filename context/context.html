@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="context.js"></script>
+    <link rel="sheets" type="text/css" href="../style.css">
+</head>
+<body>
+<h3>JavaScript中的上下文</h3>
+<a href="../index.html">返回</a>
+<br>
+<br>
+<div class="buttons">
+    <button onclick="func()">调用函数-全局上下文</button>
+    <button onclick="obj1.func()">调用函数-对象内部方法</button>
+    <button onclick="obj2.func()">调用函数-对象内部箭头函数</button>
+    <button id="outbt">监听对象上下文</button>
+    <button onclick="objectConstructor('JOJO')">构造函数上下文</button>
+    <button onclick="instance.logValue()">类上下文</button>
+</div>
+
+<script>
+    // 事件处理程序上下文
+    outbt.addEventListener('click', function () {
+        console.log(this.id);
+    })
+    // 类上下文
+    const instance = new ExampleClass('instance');
+</script>
+
+</body>
+</html>
